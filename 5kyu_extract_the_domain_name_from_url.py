@@ -11,6 +11,9 @@ def domain_name(url):
         dot_index = url.index('.')
         url = url[:dot_index]
 
+    elif '.' in url:
+        dot_index = url.index('.')
+        url = url[:dot_index]
 
     return url
 
