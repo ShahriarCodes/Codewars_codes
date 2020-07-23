@@ -17,8 +17,12 @@ def domain_name(url):
 
     return url
 
+def domain_name_one_liner(url):
+    return url.split("//")[-1].split("www.")[-1].split(".")[0]
 
 s = "http://github.com/carbonfive/raygun"
 # s = "http://www.zombie-bites.com"
 s.index("//")
-domain_name(s)
+%timeit domain_name(s)
+
+%timeit domain_name_one_liner(s)
